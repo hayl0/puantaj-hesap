@@ -4,12 +4,6 @@ import Link from "next/link";
 export default function YardimPage() {
   return (
     <div className="flex flex-col">
-      {/* Hero Section */}
-      <HeroSection
-        title="Yardım ve Kullanım Kılavuzu"
-        subtitle="İş Takip Sistemi hakkında bilgi ve kullanım talimatları"
-        size="small"
-      />
 
       {/* Main Content */}
       <section className="py-12 md:py-16 px-6 lg:px-8">

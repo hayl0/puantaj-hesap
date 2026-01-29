@@ -17,13 +17,6 @@ export default function GelirGiderPage() {
 
   return (
     <div className="flex flex-col">
-      {/* Hero Section */}
-      <HeroSection
-        title="Gelir Gider ve Harcama Tablosu"
-        subtitle="Aylık gelir ve giderleri kategorize edin, net kar/zarar durumunu anında görün"
-        size="small"
-      />
-
       {/* Controls Section */}
       <section className="py-6 px-6 lg:px-8 bg-warm-gray/50 border-b-4 border-charcoal">
         <div className="max-w-7xl mx-auto">
