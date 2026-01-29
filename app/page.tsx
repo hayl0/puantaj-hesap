@@ -1,49 +1,68 @@
-export default function Home() {
+import StatsCards from "@/components/dashboard/stats-cards";
+
+export default function HomePage() {
   return (
-    <div className="min-h-screen bg-gradient-to-br from-gray-900 to-black p-6">
-      <div className="max-w-4xl mx-auto text-center">
-        <div className="mb-8">
-          <h1 className="text-4xl md:text-5xl font-bold text-white mb-4">
-            🚀 Puantaj Pro Live!
-          </h1>
-          <p className="text-xl text-gray-300 mb-2">
-            Canlı yayındasınız! Sistem hazır.
-          </p>
-          <p className="text-gray-400">
-            URL: https://brenden-colorfast-revulsively.ngrok-free.dev
-          </p>
-        </div>
+    <div className="min-h-screen bg-gray-50 p-6">
+      {/* Başlık */}
+      <div className="mb-8">
+        <h1 className="text-3xl font-bold text-gray-900">İş Takip Panosu</h1>
+        <p className="text-gray-600 mt-2">Personel, puantaj ve finans takibi</p>
+      </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
-          <a href="/puantaj" className="bg-gradient-to-r from-blue-600/20 to-cyan-600/20 border border-blue-700 p-6 rounded-xl hover:border-blue-500 transition hover:scale-105">
-            <h2 className="text-2xl font-bold text-white mb-2">📊 Puantaj</h2>
-            <p className="text-gray-400">Ana kontrol paneli</p>
-          </a>
-          
-          <a href="/personel" className="bg-gradient-to-r from-green-600/20 to-emerald-600/20 border border-green-700 p-6 rounded-xl hover:border-green-500 transition hover:scale-105">
-            <h2 className="text-2xl font-bold text-white mb-2">👥 Personel</h2>
-            <p className="text-gray-400">47 çalışan</p>
-          </a>
-          
-          <a href="/mesai" className="bg-gradient-to-r from-amber-600/20 to-orange-600/20 border border-amber-700 p-6 rounded-xl hover:border-amber-500 transition hover:scale-105">
-            <h2 className="text-2xl font-bold text-white mb-2">⏰ Mesai</h2>
-            <p className="text-gray-400">112 saat bu ay</p>
-          </a>
-        </div>
+      {/* İstatistik Kartları */}
+      <StatsCards />
 
-        <div className="bg-gray-800/50 border border-gray-700 rounded-xl p-6 mb-8">
-          <h3 className="text-xl font-bold text-white mb-4">📡 Canlı Bağlantı Bilgileri</h3>
-          <div className="text-left space-y-2">
-            <p><span className="text-gray-400">URL:</span> <span className="text-white font-mono">https://brenden-colorfast-revulsively.ngrok-free.dev</span></p>
-            <p><span className="text-gray-400">Durum:</span> <span className="text-green-400">● Canlı</span></p>
-            <p><span className="text-gray-400">Gecikme:</span> <span className="text-white">194ms</span></p>
-            <p><span className="text-gray-400">Bölge:</span> <span className="text-white">Europe</span></p>
-          </div>
-        </div>
+      {/* Hızlı Erişim Butonları */}
+      <div className="mt-8 grid grid-cols-2 md:grid-cols-4 gap-4">
+        <button className="bg-blue-600 text-white p-4 rounded-xl hover:bg-blue-700 transition">
+          <div className="text-lg font-semibold">Puantaj Girişi</div>
+          <div className="text-sm opacity-90">Yeni kayıt ekle</div>
+        </button>
+        
+        <button className="bg-green-600 text-white p-4 rounded-xl hover:bg-green-700 transition">
+          <div className="text-lg font-semibold">Rapor Al</div>
+          <div className="text-sm opacity-90">Aylık raporlar</div>
+        </button>
+        
+        <button className="bg-purple-600 text-white p-4 rounded-xl hover:bg-purple-700 transition">
+          <div className="text-lg font-semibold">Personel Ekle</div>
+          <div className="text-sm opacity-90">Yeni çalışan</div>
+        </button>
+        
+        <button className="bg-orange-600 text-white p-4 rounded-xl hover:bg-orange-700 transition">
+          <div className="text-lg font-semibold">Finans</div>
+          <div className="text-sm opacity-90">Gelir-gider</div>
+        </button>
+      </div>
 
-        <div className="text-gray-400 text-sm">
-          <p>Bu sayfa canlı olarak sunuluyor. Tüm dünyadan erişilebilir.</p>
-          <p className="mt-2">© 2024 Puantaj Pro - Tüm hakları saklıdır.</p>
+      {/* Son İşlemler Tablosu */}
+      <div className="mt-8 bg-white rounded-xl p-6 shadow">
+        <h2 className="text-xl font-bold mb-4">Son İşlemler</h2>
+        <div className="overflow-x-auto">
+          <table className="w-full">
+            <thead>
+              <tr className="border-b">
+                <th className="text-left p-3">Personel</th>
+                <th className="text-left p-3">Tarih</th>
+                <th className="text-left p-3">İşlem</th>
+                <th className="text-left p-3">Durum</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr className="border-b hover:bg-gray-50">
+                <td className="p-3">Ahmet Yılmaz</td>
+                <td className="p-3">29.01.2024</td>
+                <td className="p-3">Mesai Girişi</td>
+                <td className="p-3"><span className="bg-green-100 text-green-800 px-2 py-1 rounded">Tamamlandı</span></td>
+              </tr>
+              <tr className="border-b hover:bg-gray-50">
+                <td className="p-3">Ayşe Demir</td>
+                <td className="p-3">29.01.2024</td>
+                <td className="p-3">İzin Talebi</td>
+                <td className="p-3"><span className="bg-yellow-100 text-yellow-800 px-2 py-1 rounded">Beklemede</span></td>
+              </tr>
+            </tbody>
+          </table>
         </div>
       </div>
     </div>
